@@ -29,7 +29,6 @@ async function FillBooksTable() {
         ShowDashboard();
     }
     catch (err) {
-        console.log("Error: " + err);
         alert("Wrong login or password!");
     }
 }
@@ -94,7 +93,6 @@ async function AddBook() {
     var title = formData.get("TitleOfBookToAdd");
     var author = formData.get("AuthorOfBookToAdd");
     var year = formData.get("YearOfBookToAdd");
-    console.log(title +" "+author+" "+year);
     try {
         await AddBookRequest(title, author, year)
         CleanTable();
@@ -108,7 +106,6 @@ async function AddBook() {
 async function RemoveBook() {
     var formData = new FormData(document.getElementById("removeForm"));
     var id = formData.get("IdOfBookToRemove");
-    console.log(id);
     try {
         await RemoveBookRequest(id)
         CleanTable();
@@ -120,7 +117,6 @@ async function RemoveBook() {
 }
 
 async function AddBookRequest(title, author, year) {
-    console.log(title +" "+author+" "+year);
     var authorizationBasic = "Basic " + window.btoa(this.username + ':' + this.password);
     var request = new XMLHttpRequest();
     return new Promise(function (resolve, reject) {
@@ -145,7 +141,6 @@ async function AddBookRequest(title, author, year) {
 }
 
 async function RemoveBookRequest(id) {
-    console.log(id);
     var authorizationBasic = "Basic " + window.btoa(this.username + ':' + this.password);
     var request = new XMLHttpRequest();
     return new Promise(function (resolve, reject) {
