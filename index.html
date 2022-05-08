@@ -1,11 +1,56 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Jan Mokracki AJAX Project</title>
-    </head>
-    <body>
-
-        <p>Things will be done here</p>
-
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+        
+<body>
+    <div id="login">
+        <h1>Login to gain access to books list</h1>
+        <form id="loginForm" onsubmit="Login();return false">
+            <label for="Username">Username:</label><br>
+            <input type="text" id="username" name="Username"><br>
+            <label for="Password">Password:</label><br>
+            <input type="text" id="password" name="Password" typeof=password><br><br>
+            <input type="submit" value="Sign in">
+        </form>
+    </div>
+    <div id="dashboard" style="display: none">
+        <H1>Dashboard</H1>
+        <H2>Books</H2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody id="booksTable"></tbody>
+        </table>
+        <H2>Add book</H2>
+        <form id="addForm" onsubmit="AddBook();return false">
+            <label for="TitleOfBookToAdd">Title of book to add:</label><br>
+            <input type="text" id="TitleOfBookToAdd" name="TitleOfBookToAdd"><br>
+            <label for="AuthorOfBookToAdd">Author of book to add:</label><br>
+            <input type="text" id="AuthorOfBookToAdd" name="AuthorOfBookToAdd"><br><br>
+            <label for="YearOfBookToAdd">Year of book to add:</label><br>
+            <input type="text" id="YearOfBookToAdd" name="YearOfBookToAdd"><br><br>
+            <input type="submit" value="Add">
+        </form>
+        <H2>Remove book</H2>
+        <form id="removeForm" onsubmit="RemoveBook();return false">
+            <label for="IdOfBookToRemove">Id of book to remove:</label><br>
+            <input type="text" id="IdOfBookToRemove" name="IdOfBookToRemove"><br>
+            <input type="submit" value="Remove">
+        </form>
+        <H2>Logout</H2>
+        <form onsubmit="Logout();">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+</body>
+<script src="main.js"></script>
 </html>
